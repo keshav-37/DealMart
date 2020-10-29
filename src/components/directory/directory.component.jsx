@@ -9,13 +9,13 @@ class Directory extends React.Component{
         this.state = {sections: [
   {
     title: 'hats',
-    imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+    imageUrl: 'https://www.brixton.com/pub/media/catalog/category/HO19-GIFT-GUIDE-CLP-HAT-SHOP.jpg',
     id: 1,
     linkUrl: 'shop/hats'
   },
   {
     title: 'jackets',
-    imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+    imageUrl: 'https://previews.123rf.com/images/nitikorn123rf/nitikorn123rf1710/nitikorn123rf171000796/88368023-collection-of-leather-jackets-on-hangers-in-the-shop-for-biker-s-or-motorcycle-jackets-.jpg',
     id: 2,
     linkUrl: 'shop/jackets'
   },
@@ -27,14 +27,14 @@ class Directory extends React.Component{
   },
   {
     title: 'womens',
-    imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+    imageUrl: 'https://cdn.shopify.com/s/files/1/1170/9984/products/jeimi3_800x.jpg?v=1589569866',
     size: 'large',
     id: 4,
     linkUrl: 'shop/womens'
   },
   {
     title: 'mens',
-    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+    imageUrl: 'https://wallpapercave.com/wp/wp1810749.jpg',
     size: 'large',
     id: 5,
     linkUrl: 'shop/mens'
@@ -46,8 +46,8 @@ class Directory extends React.Component{
     render(){
         return(
             <div className="directory-menu">
-                {this.state.sections.map(({title, imageUrl, id, size}) => (
-                  <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
+                {this.state.sections.map(({id, ...otherSectionProps}) => (
+                  <MenuItem key={id} {...otherSectionProps}/>
                 ))}
             </div>
         )
